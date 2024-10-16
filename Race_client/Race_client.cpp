@@ -40,7 +40,7 @@ void list_TC(WD_boots& boots, Broom& broom, Camel& camel, Kentavr& kentavr, Eagl
     cout << "5. " << eagle.getName() << "\n";
     cout << "6. " << f_camel.getName() << "\n";
     cout << "7. " << carpet.getName() << "\n";
-    cout << "0. Закончить регистрацию." << endl;
+    cout << "0. Закончить регистрацию и начать гонку" << endl;
 }
 
 bool reg_check(Transport* transport, Transport** transports, int currentCount) { // проверка на регистрацию

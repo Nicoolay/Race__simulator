@@ -10,9 +10,10 @@ Broom::Broom() : Air(1, "Метла", 20, 0) {
 
 double Broom::calculateTime(double distance) {
     double reductionFactor= 1.00;
-   
+    int crutch1{};
     if (distance <= 99000) {
-        reductionFactor = 1.00 - ((distance / 1000) / 100);
+        crutch1 = distance / 1000;
+        reductionFactor = 1.00 - (crutch1 / static_cast<double>(100));
        
     }
     else 
