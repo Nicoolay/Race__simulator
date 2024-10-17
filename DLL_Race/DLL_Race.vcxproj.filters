@@ -48,6 +48,9 @@
     <ClInclude Include="API.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
+    <ClInclude Include="transport_factory.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Transport.cpp">
@@ -78,6 +81,9 @@
       <Filter>Исходные файлы</Filter>
     </ClCompile>
     <ClCompile Include="Broom.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="transport_factory.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>

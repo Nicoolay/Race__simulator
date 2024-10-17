@@ -4,14 +4,7 @@
 #include "API.h"
 #include "Transport.h"
 #include "Air.h"
-#include "Ground.h"
-#include "4wd_boots.h"
-#include "Broom.h"
-#include "Camel.h"
-#include "Eagle.h"
-#include "Fast_camel.h"
-#include "Kentavr.h"
-#include "Magic_carpet.h"
+#include "transport_factory.h"
 
 void type_of_race(int race_type, double distance) { // для сокращения количества кода, т.к. используется часто
     switch (race_type){
@@ -236,6 +229,8 @@ int main(int argc, char* argv[])
     Kentavr kentavr;
     Fast_Camel f_camel;
     Camel camel;
+    size_t total_transports = 0;
+    Transport** transports_all = makeTransports(total_transports);
     int restart{};
     do {
         std::cout << "Добро пожаловать, в гоночный симулятор!" << "\n" << "1. Гонка для наземного транспорта" << "\n"
@@ -267,27 +262,26 @@ int main(int argc, char* argv[])
 
         list_TC(boots, broom, camel, kentavr, eagle, f_camel, carpet);
         int currentCount = 0;
-        Transport** transports = new Transport*[7];
+        size_t selected_transports = 7;
+        Transport** transports_race = new Transport * [selected_transports];
 
-
-        registration_TC(boots, broom, camel, kentavr, eagle, f_camel, carpet, race_type, distance, transports, currentCount);
-        bubbleSort(transports, currentCount, distance);
+        registration_TC(boots, broom, camel, kentavr, eagle, f_camel, carpet, race_type, distance, transports_race, currentCount);
+        bubbleSort(transports_race, currentCount, distance);
         std::cout << "Результаты гонки: " << std::endl;
         int count_1 = 1;
         for (int i = 0; i < currentCount; ++i) {
             
-            std::cout << count_1 << ". " << transports[i]->getName() << " время: " << transports[i]->calculateTime(distance) << std::endl;
+            std::cout << count_1 << ". " << transports_race[i]->getName() << " время: " << transports_race[i]->calculateTime(distance) << std::endl;
             count_1++;
         }
 
         std::cout <<"\n" << "1. Провести ещё одну гонку" << "\n" << "2. Выйти" << "\n" << "Выберете действие: " << std::endl;
         std::cin >> restart;
-        delete[] transports;
+        delete[] transports_race;
     }
 
     while (restart != 2);
 
-    // Cmake
 
 
 }

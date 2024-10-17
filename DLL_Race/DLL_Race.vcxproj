@@ -142,6 +142,7 @@
     <ClInclude Include="Kentavr.h" />
     <ClInclude Include="Magic_carpet.h" />
     <ClInclude Include="Transport.h" />
+    <ClInclude Include="transport_factory.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="4wd_boots.cpp" />
@@ -154,6 +155,7 @@
     <ClCompile Include="Kentavr.cpp" />
     <ClCompile Include="Magic_carpet.cpp" />
     <ClCompile Include="Transport.cpp" />
+    <ClCompile Include="transport_factory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\CMakeLists.txt" />

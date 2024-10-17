@@ -1,12 +1,10 @@
 cmake_minimum_required(VERSION 3.22.0)
 project(Race_simulator)
 
-# ќпредел€ем компил€цию как дл€ DLL
-add_compile_definitions(API_EXPORTS)
-
 # —оздаем библиотеку
 add_library(Race_library SHARED 
     "DLL_Race/API.h"
+    "DLL_Race/transport_factory.cpp" "DLL_Race/transport_factory.h"
     "DLL_Race/Transport.cpp" "DLL_Race/Transport.h" 
     "DLL_Race/Air.cpp" "DLL_Race/Air.h" 
     "DLL_Race/Ground.cpp" "DLL_Race/Ground.h"     
@@ -21,6 +19,9 @@ add_library(Race_library SHARED
 
 # ”казываем путь к заголовочным файлам дл€ библиотеки
 target_include_directories(Race_library PRIVATE "${CMAKE_SOURCE_DIR}/DLL_Race")
+
+# ќпредел€ем компил€цию как дл€ DLL только дл€ библиотеки
+target_compile_definitions(Race_library PRIVATE API_EXPORTS)
 
 # —оздаем исполн€емый файл
 add_executable(Race_simulator "Race_client/Race_client.cpp")
