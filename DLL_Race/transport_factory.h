@@ -10,7 +10,6 @@
 #include "Kentavr.h"
 #include "Magic_carpet.h"
 
-
 #ifdef API_EXPORTS
 #define TRANSPORT_FACTORY_API __declspec(dllexport)
 #else

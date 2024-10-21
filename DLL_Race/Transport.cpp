@@ -2,9 +2,10 @@
 
 Transport::Transport() {}
 
-Transport::Transport(const char* name) {
+Transport::Transport(const char* name, int air) {
     strncpy_s(this->name_TC, name, sizeof(this->name_TC) - 1);
     this->name_TC[sizeof(this->name_TC) - 1] = '\0';  // Обеспечиваем нуль-терминатор
+    this->air = air;
 }
 
 

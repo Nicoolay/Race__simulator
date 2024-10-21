@@ -6,7 +6,7 @@
 
 class RACE_API Air : public Transport {
 protected:
-    int air;
+   /* int air;*/
     const char* name_TC;
     int speed;
     int distance_reduction_factor;

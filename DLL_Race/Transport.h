@@ -1,4 +1,5 @@
 #pragma once
+
 #include "API.h"
 #include <cstring>
 
@@ -15,7 +16,7 @@ public:
     virtual double calculateTime(double distance) = 0;
 
     Transport();
-    Transport(const char* name);
+    Transport(const char* name, int air);
 
     int getAir() const;
     const char* getName() const;
