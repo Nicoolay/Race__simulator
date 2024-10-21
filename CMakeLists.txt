@@ -15,6 +15,7 @@ add_library(Race_library SHARED
     "DLL_Race/Kentavr.cpp" "DLL_Race/Kentavr.h" 
     "DLL_Race/Camel.cpp" "DLL_Race/Camel.h" 
     "DLL_Race/Fast_camel.cpp" "DLL_Race/Fast_camel.h"
+
 )
 
 # ”казываем путь к заголовочным файлам дл€ библиотеки
