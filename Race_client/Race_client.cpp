@@ -3,7 +3,7 @@
 #include <windows.h>
 #include "transport_factory.h"
 
-void type_of_race(int race_type, double distance) { // для сокращения количества кода, т.к. используется часто
+void type_of_race(int race_type, double distance) {
     switch (race_type){
         case 1:
             std::cout << "Гонка для наземного транспорта. Расстояние: " << distance << std::endl;
